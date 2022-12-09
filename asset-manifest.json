@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ajs.github.io/static/css/main.aa777b19.css",
-    "main.js": "/ajs.github.io/static/js/main.1e4b3c38.js",
+    "main.js": "/ajs.github.io/static/js/main.01c161d8.js",
     "static/js/787.1ed0c42c.chunk.js": "/ajs.github.io/static/js/787.1ed0c42c.chunk.js",
     "static/media/asjad.png": "/ajs.github.io/static/media/asjad.c13e0ed3d82b2e609b23.png",
     "static/media/1.svg": "/ajs.github.io/static/media/1.79f21718b9696e51f16a04c3d0a03f3c.svg",
@@ -22,11 +22,11 @@
     "static/media/reactbackground.svg": "/ajs.github.io/static/media/reactbackground.cf45ea379be735fa1ca02cd9e3708d29.svg",
     "index.html": "/ajs.github.io/index.html",
     "main.aa777b19.css.map": "/ajs.github.io/static/css/main.aa777b19.css.map",
-    "main.1e4b3c38.js.map": "/ajs.github.io/static/js/main.1e4b3c38.js.map",
+    "main.01c161d8.js.map": "/ajs.github.io/static/js/main.01c161d8.js.map",
     "787.1ed0c42c.chunk.js.map": "/ajs.github.io/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aa777b19.css",
-    "static/js/main.1e4b3c38.js"
+    "static/js/main.01c161d8.js"
   ]
 }
