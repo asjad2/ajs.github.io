@@ -14,7 +14,7 @@ const Landingpage = (props) => {
       <Services bgcolor={props.bgcolor} txtcolor={props.txtcolor}  headtxtcolor={props.headtxtcolor}/>
       <ContactUs bgcolor={props.bgcolor} txtcolor={props.txtcolor}  headtxtcolor={props.headtxtcolor} wordCounter={props.wordCounter} setwordCounter={props.setwordCounter} letterCounter={props.letterCounter} setletterCounter={props.setletterCounter}/>
     </div>
-  );T
+  );
 };
 
 export default Landingpage;
