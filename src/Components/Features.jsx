@@ -1,7 +1,4 @@
 import React from "react";
-import Technology from "./../Images/technology.svg";
-import PManagement from "./../Images/pmanagement.svg";
-import Relationship from "./../Images/relationship.svg";
 import { Link } from "react-router-dom";
 import FeaturesData from "./../Data/FeaturesData";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";

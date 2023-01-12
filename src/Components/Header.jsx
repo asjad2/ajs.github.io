@@ -11,7 +11,7 @@ function Header(props) {
       <div className=" mx-auto flex px-5 py-6 md:flex-row flex-col items-center space-x-5 ">
         <div className="lg:flex-grow  md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left items-center text-center bg-[#7ff0ce] p-6 rounded-3xl">
           <h1 className={`font-Poppins title-font sm:text-4xl text-3xl mb-4 font-medium text-black  `}>
-            AJ's
+           Who I am?
             <br className="hidden lg:inline-block" />
           </h1>
           <p className="mb-4 leading-relaxed">
@@ -55,9 +55,7 @@ function Header(props) {
             </p>
           </p>
           <div className="flex justify-center">
-            <button className="ml-4  inline-flex bg-[#33BD94] border-spacing-0 py-1 px-3 focus:outline-none text-white font-medium hover:bg-[#196c53] active:bg-[#2b9a78]    rounded-xl text-lg">
-              work with AJ's
-            </button>
+        
           </div>
         </div>
         <div className="justify-between lg:max-w-lg lg:w-full lg:mt-10 md:w-1/2 w-[90%]">

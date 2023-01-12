@@ -1,66 +1,39 @@
-import React from "react";
-import * as yup from "yup";
+import React, { useState } from "react";
 import signupsvg from "./../Images/signup.svg";
-import { useFormik, Formik, ErrorMessage } from "formik";
-
-const validationSchema = yup.object({
-  FullName: yup.string().required("Name is Required!"),
-
-  Password: yup
-    .string()
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
-    )
-    .required("Password is Required!"),
-
-  PhoneNumber: yup.string().required("Phone is Required!"),
-
-  Email: yup.string().required("Email is Required!"),
-  Username: yup.string().required("Email is Required!"),
-
-  ConfirmPassword: yup
-    .string()
-    .oneOf([yup.ref("Password"), null], "Passwords must match"),
-});
-const renderError = (message) => <p className="help is-danger">{message}</p>;
+import { addMembers } from "../Service/api";
 
 function Signup(props) {
-  const formik = useFormik({
-    initialValues: {
-      FullName: "",
-      Username: "",
-      Password: "",
-      ConfirmPassword: "",
-      Email: "",
-      PhoneNumber: "",
-    },
-
-    // onSubmit: async (values, { resetForm }) => {
-    //   await addApplicant(values);
-    //   resetForm({ values: "" });
-    // },
+  let [member, setMember] = useState({
+    FullName: "",
+    UserName: "",
+    Email: "",
+    PhoneNumber: "",
+    Password: "",
+    confirmPassword:""
   });
 
+  const handleMembers = (e) => {
+    setMember({ ...member, [e.target.name]: e.target.value });
+  };
+  const memberMessagner = async (e) => {
+    e.preventDefault();
+    await addMembers(member);
+    setMember({
+      FullName: "",
+      UserName: "",
+      Email: "",
+      PhoneNumber: "",
+      Password: "",
+      confirmPassword:""
+    });
+  };
   return (
-    
-    <Formik
-      validationSchema={validationSchema}
-      initialValues={{
-        FullName: "",
-        Username: "",
-        Password: "",
-        ConfirmPassword: "",
-        Email: "",
-        PhoneNumber: "",
-      }}
-    >
-      <div className={`bg-${props.bgcolor} text-${props.txtcolor} container `}>
+    <div className={`bg-${props.bgcolor} text-${props.txtcolor} container `}>
       <h1 className="text-center pb-6 text-3xl font-bold py-4 ">Join us!!!</h1>
       <div className=" p-8 flex flex-col lg:flex-row container mx-auto">
         <img src={signupsvg} alt="soon" className="lg:w-[40rem]" />
         <div className="  bg-[#7ff0ce] lg:ml-auto w-fit p-8 flex mx-auto rounded-3xl shadow-lg shadow-[#7ff0ce]">
-          <form onSubmit={formik.handleSubmit}>
+          <form>
             <div className=" grid  lg:grid-cols-2 lg:gap-8 text-lg font-bold ">
               <div className="flex flex-col ">
                 <label className="text-center" for="fullname">
@@ -69,10 +42,9 @@ function Signup(props) {
                 <input
                   type="text"
                   name="FullName"
-                  onChange={formik.handleChange}
-                  value={formik.values.FullName}
+                  onChange={handleMembers}
+                  value={member.FullName}
                   className="p-2 rounded-3xl text-center"
-                  id="exampleFormControlInput1"
                 />
               </div>
 
@@ -82,11 +54,10 @@ function Signup(props) {
                 </label>
                 <input
                   type="text"
-                  name="Username"
-                  onChange={formik.handleChange}
-                  value={formik.values.Username}
+                  name="UserName"
+                  onChange={handleMembers}
+                  value={member.UserName}
                   className="p-2 rounded-3xl text-center"
-                  id="exampleFormControlInput1"
                 />
               </div>
 
@@ -99,11 +70,9 @@ function Signup(props) {
                   type="password"
                   id="password"
                   className="p-2 rounded-3xl text-center"
-                  onChange={formik.handleChange}
-                  value={formik.values.Password}
+                  onChange={handleMembers}
+                  value={member.Password}
                 />
-
-                <ErrorMessage name="name" render={renderError} />
               </div>
 
               <div className="flex flex-col  ">
@@ -111,15 +80,12 @@ function Signup(props) {
                   Confirm Password
                 </label>
                 <input
-                  name="ConfirmPassword"
+                  name="confirmPassword"
                   type="password"
-                  id="confirmpassword"
                   className="p-2 rounded-3xl text-center"
-                  onChange={formik.handleChange}
-                  value={formik.values.ConfirmPassword}
+                  value={member.confirmPassword}
+                  onChange={handleMembers}
                 />
-
-                <ErrorMessage name="name" render={renderError} />
               </div>
 
               <div className="flex flex-col ">
@@ -128,15 +94,12 @@ function Signup(props) {
                 </label>
                 <input
                   type="email"
-                  id="emailAddress"
                   name="Email"
-                  onChange={formik.handleChange}
-                  value={formik.values.Email}
+                  onChange={handleMembers}
+                  value={member.Email}
                   className="p-2 rounded-3xl text-center"
                   aria-describedby="emailHelp"
                 />
-
-                {/* <NErrorMessage name="email" /> */}
               </div>
 
               <div className="flex flex-col  ">
@@ -146,39 +109,23 @@ function Signup(props) {
                 <input
                   name="PhoneNumber"
                   type="tel"
-                  id="phoneNumber"
                   className="p-2 rounded-3xl text-center"
-                  onChange={formik.handleChange}
-                  value={formik.values.PhoneNumber}
-                />
-              </div>
-              <div className="flex flex-col  ">
-                <label className="text-center" for="phoneNumber">
-                  Phone Number
-                </label>
-                <input
-                  name="PhoneNumber"
-                  type="tel"
-                  id="phoneNumber"
-                  className="p-2 rounded-3xl text-center"
-                  onChange={formik.handleChange}
-                  value={formik.values.PhoneNumber}
+                  onChange={handleMembers}
+                  value={member.PhoneNumber}
                 />
               </div>
             </div>
 
-            <div className="my-4 flex justify-center">
-              <input
-                type="submit"
-                value="Submit"
-                className="bg-black rounded-xl  text-white p-2 active:bg-gray-800 "
-              />
-            </div>
+            <button
+              className="my-4 flex mx-auto bg-black rounded-xl  text-white p-2 active:bg-gray-800 "
+              onClick={memberMessagner}
+            >
+              Sign Up
+            </button>
           </form>
         </div>
       </div>
-      </div>
-    </Formik>
+    </div>
   );
 }
 

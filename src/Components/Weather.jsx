@@ -33,7 +33,7 @@ const Weather = () => {
   };
   console.log(data);
   return (
-    <div className="  flex flex-col mx-auto  text-black">
+    <div className="  flex flex-col mx-auto  text-black">z
       <div className="flex item-center mx-auto p-4  text-lg  space-x-3">
         <input
           type="text"

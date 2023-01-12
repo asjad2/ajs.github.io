@@ -1,26 +1,46 @@
 import React from "react";
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { addMessages } from "../Service/api";
 
 function ContactUs(props) {
-  let letterResult=0;
-  let wordResult=0;
+  let [message, setMessage] = useState("");
+  let [user, setUser] = useState({
+    FullName: "",
+    Email: "",
+    Message: "",
+  });
 
-  let [message,setMessage]=useState("")
-  const messagecounter=(e)=>{
-    setMessage(e.currentTarget.value)
-for(let letters in message){
-  letterResult=Number(letters)+1
-  props.setletterCounter(letterResult)
-}
-for (let words in message.split(" ")){
-   wordResult=Number(words)+1
-  props.setwordCounter(wordResult)
-}
-  }
+  const handleInputs = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+    setMessage(e.currentTarget.value);
+    for (let letters in message) {
+      let letterResult = Number(letters) + 1;
+      props.setletterCounter(letterResult);
+    }
+    for (let words in message.split(" ")) {
+      let wordResult = Number(words) + 1;
+      props.setwordCounter(wordResult);
+    }
+  };
+  const messagner = async (e) => {
+     e.preventDefault();
+    await addMessages(user);
+    setUser({
+      FullName: "",
+      Email: "",
+      Message: "",
+    });
+    setMessage("")
+  };
+
   return (
-    <section className={`text-black bg-${props.bgcolor} body-font shadow-lg shadow-[#000000] rounded-3xl p-8`} id="contactus">
-      <h1 className={`font-bold text-3xl text-center text-${props.txtcolor}`}>Contact US</h1>
+    <section
+      className={`text-black bg-${props.bgcolor} body-font shadow-lg shadow-[#000000] rounded-3xl p-8`}
+      id="contactus"
+    >
+      <h1 className={`font-bold text-3xl text-center text-${props.txtcolor}`}>
+        Contact US
+      </h1>
       <div className="container px-5 py-8 mx-auto flex sm:flex-nowrap flex-wrap">
         <div className="lg:w-2/3 md:w-1/2 bg-white  rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
           <iframe
@@ -40,16 +60,14 @@ for (let words in message.split(" ")){
               <h2 className="title-font font-semibold text-black tracking-widest text-xs">
                 ADDRESS
               </h2>
-              <p className="mt-1">
-               Toba Tek Singh, Punjab, Pakistan
-              </p>
+              <p className="mt-1">Toba Tek Singh, Punjab, Pakistan</p>
             </div>
             <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
               <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">
                 EMAIL
               </h2>
               <a href className="text-grey-500 leading-relaxed">
-               webwithaj@gmail.com
+                webwithaj@gmail.com
               </a>
               <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
                 PHONE
@@ -66,49 +84,54 @@ for (let words in message.split(" ")){
             Kindly provide constructive feedback regarding services or website
           </p>
           <div className="relative mb-4">
-            <label
-              htmlFor="name"
-              className="leading-7 text-sm text-gray-600"
-            >
+            <label htmlFor="name" className="leading-7 text-sm text-gray-600">
               Name
             </label>
             <input
               type="text"
               id="name"
-              name="name"
+              value={user.FullName}
+              onChange={handleInputs}
+              name="FullName"
               className="w-full bg-white rounded border focus:border-500 focus:ring-2 focus:ring-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
           <div className="relative mb-4">
-            <label
-              htmlFor="email"
-              className="leading-7 text-sm text-gray-600"
-            >
+            <label htmlFor="email" className="leading-7 text-sm text-gray-600">
               Email
             </label>
             <input
               type="email"
+              value={user.Email}
+              onChange={handleInputs}
               id="email"
-              name="email"
+              name="Email"
               className="w-full bg-white rounded border  focus:border-500 focus:ring-2 focus:ring-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
           <div className="relative mb-4">
             <label
               htmlFor="message"
+              name="Message"
               className="leading-7 text-sm text-gray-600"
             >
               Message
             </label>
             <textarea
               id="message"
-              name="message"
-              onChange={messagecounter}
+              name="Message"
+              value={user.Message}
+              onChange={handleInputs}
               className="w-full bg-white rounded border focus:border-500 focus:ring-2 focus:ring-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
             ></textarea>
-            <h2 className="text-right">{props.letterCounter}/{props.wordCounter}</h2>
+            <h2 className="text-right">
+              {props.letterCounter}/{props.wordCounter}
+            </h2>
           </div>
-          <button className="text-white bg-black border-0 py-2 px-6 focus:outline-none w-fit mx-auto rounded-2xl hover:bg-orange-700 text-lg">
+          <button
+            onClick={messagner}
+            className="text-white bg-black border-0 py-2 px-6 focus:outline-none w-fit mx-auto rounded-2xl hover:bg-orange-700 text-lg"
+          >
             Submit
           </button>
           <p className="text-xs text-gray-500 mt-3">
@@ -116,11 +139,7 @@ for (let words in message.split(" ")){
           </p>
         </div>
       </div>
-      <Outlet/>
     </section>
-    
   );
 }
-
-
 export default ContactUs;

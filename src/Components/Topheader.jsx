@@ -1,5 +1,6 @@
 import Typewriter from "typewriter-effect";
 import asjad from "./../Images/topheader.png";
+import { Link } from "react-router-dom";
 const Topheader = () => {
   return (
     <div className="container flex flex-col lg:flex-row-reverse lg:justify-between p-8  items-center  bg-gradient-to-l from-[#dcfff4] to-[rgb(51,189,148)] "> 
@@ -15,8 +16,7 @@ const Topheader = () => {
           <Typewriter
             options={{
               strings: [
-                "I am a Computer Engineer & MERN Developer",
-                "Who Stuck in coding",
+                "Computer Engineer & MERN Developer",
               ],
               autoStart: true,
               loop: true,
@@ -28,9 +28,11 @@ const Topheader = () => {
           <button className=" rounded-3xl w-fit p-2 bg-gradient-to-l from-[#000000] to-[#33BD94] active:from-[#063527]">
             My CV
           </button>
+          <Link to="/portfolio/projects">
           <button className="bg-white w-fit rounded-3xl p-2 bg-gradient-to-l from-[#000000] to-[#33BD94] active:from-[#063527]">
             Work With me
           </button>
+          </Link>
         </div>
       </div>
     </div>

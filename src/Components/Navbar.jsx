@@ -2,19 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import profile from "./../Images/1.svg";
-import { BsFillArrowRightCircleFill, BsMoonStars } from "react-icons/bs";
+import {
+  BsFillArrowRightCircleFill,
+  BsMoonStars,
+  BsPersonCircle,
+} from "react-icons/bs";
 function Navbar(props) {
-  function colorsetting(){
-    if (props.bgcolor==="black"){
-      props.setbgcolor("white")
-      props.settxtcolor("black")
-      props.setheadtxtcolor("white")
-    }
-    else {
-      props.setbgcolor("black")
-      props.settxtcolor("white")
-      props.setheadtxtcolor("black")
-
+  
+  function colorsetting() {
+    if (props.bgcolor === "black") {
+      props.setbgcolor("white");
+      props.settxtcolor("black");
+      props.setheadtxtcolor("white");
+    } else {
+      props.setbgcolor("black");
+      props.settxtcolor("white");
+      props.setheadtxtcolor("black");
     }
   }
   return (
@@ -67,7 +70,7 @@ function Navbar(props) {
           </Link>
 
           <Link
-            to="/projects "
+            to="portfolio/projects "
             className="mr-5 hover:text-[#33BD94] hover:border-b-2 border-white  "
             data-dropdown-toggle="dropdown"
           >
@@ -75,16 +78,22 @@ function Navbar(props) {
           </Link>
           <button>
             {" "}
-            <BsMoonStars onClick={colorsetting}/>
+            <BsMoonStars onClick={colorsetting} className={`w-10 h-10 p-2 rounded-xl text-${props.txtcolor} bg-${props.headtxtcolor}`} />
           </button>
         </nav>
-        <Link to="/signup">
-          <button className="inline-flex items-center   border-0 py-1 px-3 focus:outline-none hover:bg-[#33BD94] hover:text-black rounded text-lg mt-4 md:mt-0">
-            Sign Up
-            <BsFillArrowRightCircleFill className="m-1 mt-2" />
-          </button>
-          
-        </Link>
+
+        {props.auth ? (
+          <Link to="/portfolio/profile">
+            <BsPersonCircle className="w-8 h-8" />
+          </Link>
+        ) : (
+          <Link to="/portfolio/login">
+            <button className="inline-flex items-center text-white border-0 py-1 px-3 focus:outline-none   text-sm mt-4 md:mt-0 bg-white w-fit rounded-3xl p-2 bg-gradient-to-l from-[#000000] to-[#33BD94] active:from-[#063527]">
+              Login
+              <BsFillArrowRightCircleFill className="m-1 mt-2" />
+            </button>
+          </Link>
+        )}
       </div>
     </header>
   );
