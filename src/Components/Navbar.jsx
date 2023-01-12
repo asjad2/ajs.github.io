@@ -88,7 +88,7 @@ function Navbar(props) {
           </Link>
         ) : (
           <Link to="/portfolio/login">
-            <button className="inline-flex items-center text-white border-0 py-1 px-3 focus:outline-none   text-sm mt-4 md:mt-0 bg-white w-fit rounded-3xl p-2 bg-gradient-to-l from-[#000000] to-[#33BD94] active:from-[#063527]">
+            <button className="inline-flex items-center text-white border-0 py-1 px-3 focus:outline-none mt-4 md:mt-0 btn">
               Login
               <BsFillArrowRightCircleFill className="m-1 mt-2" />
             </button>

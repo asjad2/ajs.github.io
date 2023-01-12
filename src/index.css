@@ -4,3 +4,8 @@
 
 @tailwind utilities;
 
+@layer utilities {
+    .btn{
+        @apply rounded-3xl w-fit text-sm font-normal p-2 bg-gradient-to-l from-[#000000] to-[#33BD94] active:from-[#063527];
+    }
+}

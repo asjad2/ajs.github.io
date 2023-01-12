@@ -25,11 +25,11 @@ const Topheader = () => {
           />
         </div>
         <div className="flex flex-row  space-x-4  p-8 text-white font-semibold text-sm mt-10">
-          <button className=" rounded-3xl w-fit p-2 bg-gradient-to-l from-[#000000] to-[#33BD94] active:from-[#063527]">
+          <button className=" btn">
             My CV
           </button>
           <Link to="/portfolio/projects">
-          <button className="bg-white w-fit rounded-3xl p-2 bg-gradient-to-l from-[#000000] to-[#33BD94] active:from-[#063527]">
+          <button className="btn">
             Work With me
           </button>
           </Link>
