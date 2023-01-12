@@ -11,7 +11,6 @@ import Games from "./Pages/Games";
 import RPS from "./Components/RPS";
 import Superhero from "./Components/Superhero";
 import { useState } from "react";
-import Testimonials from "./Components/Testimonials";
 import Login from "./Pages/Login";
 import MemberCard from "./Components/MemberCard";
 function App() {

@@ -10,7 +10,7 @@ const Services = (props) => {
   >
     <div className=" px-5  mx-auto">
       <h1 className="font-Poppins  text-center font-extrabold text-3xl pb-4 ">
-        Services
+        What I Excel in
       </h1>
       <section className="flex lg:flex-row flex-col gap-8">
         {OffersData.map((offer, index) => (

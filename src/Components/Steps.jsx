@@ -3,11 +3,10 @@ const Steps = (props) => {
   return (
     <section className={`text-${props.txtcolor} font-Roboto body-font py-6 bg-${props.bgcolor} p-8 shadow-lg shadow-[#000000] rounded-3xl`} id="processes">
       <h2 className="font-Poppins text-center font-extrabold text-3xl pb-4 ">
-        How we process?
+        How to process?
       </h2>
       <p className="text-center  text-xl pb-4 ">
-        AJ's lets you hire experienced professionals seamlessly with just a few
-        processes.
+        You can hire my Freelance Services seamlessly with just a few processes.
       </p>
       <div className="container px-5 py-6 mx-auto flex flex-wrap">
         <div className="flex lg:flex-row flex-col w-full p-6">
@@ -44,11 +43,11 @@ const Steps = (props) => {
               </div>
               <div className="flex-grow pl-4">
                 <h2 className="font-Poppins font-bold title-font text-black text-sm  mb-1 tracking-wider">
-                  Your Thoughts
+                  Your Idea
                 </h2>
                 <p className="leading-relaxed">
-                  Let's start by sharing your requirements with us, and then
-                  we'll take care of them together. Our team digs deep into your
+                  Let's start by sharing your requirements with me, and then
+                  I'll take care of them together. I will dig deep into your
                   issues, identifies your hiring goals, and starts working on
                   them immediately.
                 </p>
@@ -77,10 +76,8 @@ const Steps = (props) => {
                   elect n' choose
                 </h2>
                 <p className="leading-relaxed">
-                  We present you with the best matches based on your
-                  requirements on the list of our candidates. To hire a
-                  professional, you just need to browse their profile and choose
-                  one that fits your needs.
+                  I will present you with the best ideas based on your
+                  requirements. You just need to tell me about your choice.
                 </p>
               </div>
             </div>
@@ -104,9 +101,9 @@ const Steps = (props) => {
                   Finalization
                 </h2>
                 <p className="leading-relaxed">
-                  With our top-notch professionals at your disposal, you can sit
-                  back and relax. Their knowledge of their work ensures that
-                  they go above and beyond your expectations. On-time delivery
+                  After finalization, you can sit
+                  back and relax. I will ensures that
+                  your project will go above and beyond your expectations. On-time delivery
                   and 100% satisfaction are guaranteed.
                 </p>
               </div>
