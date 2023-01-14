@@ -32,7 +32,7 @@ function Navbar(props) {
             src={profile}
             alt="soon"
           />
-          <span className="ml-3 font-Poppins ">Web Developer | AJ's</span>
+          <span className="ml-3 font-Poppins ">{`<Asjad Iftikhar/>`}</span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           <Link

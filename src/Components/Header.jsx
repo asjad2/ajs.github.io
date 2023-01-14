@@ -15,10 +15,7 @@ function Header(props) {
             <br className="hidden lg:inline-block" />
           </h1>
           <p className="mb-4 leading-relaxed">
-            I am a Computer Engineer and a professional Full-Stack MERN
-            developer. I have collected a young and talented team to work for
-            your and achieve your goals through building and designing websites
-            with latest Technlogoies.
+          I am a Full-Stack MERN developer with a degree in Computer Engineering. The current status of my career is freelancing, and I am looking for an environment that can assist me in the development of my knowledge and experience.
           </p>
           <p className="mb-2 leading-relaxed ">
             <h2 className="font-Poppins mb-1 leading-relaxed  text-lg font-bold text-black">
