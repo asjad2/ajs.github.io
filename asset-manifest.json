@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.8217f472.css",
-    "main.js": "/portfolio/static/js/main.b9b7acfb.js",
+    "main.css": "/portfolio/static/css/main.db604b75.css",
+    "main.js": "/portfolio/static/js/main.acf69efb.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/asjad.png": "/portfolio/static/media/asjad.c13e0ed3d82b2e609b23.png",
     "static/media/topheader.png": "/portfolio/static/media/topheader.87558f007ffa6b5d9093.png",
@@ -11,7 +11,6 @@
     "static/media/404svg.svg": "/portfolio/static/media/404svg.9565b474c82589d1a8ea859a50cdfc49.svg",
     "static/media/Yourhero.svg": "/portfolio/static/media/Yourhero.9f8787d60ba94b73845ff5ec78e7e55a.svg",
     "static/media/Rock1.svg": "/portfolio/static/media/Rock1.6695a5424334b20b602154d3934a71a5.svg",
-    "static/media/usama.jpeg": "/portfolio/static/media/usama.d548df1483cd7ae80184.jpeg",
     "static/media/Otherhero.svg": "/portfolio/static/media/Otherhero.8e56e7dfbcc01a6d1d69670a19d58a05.svg",
     "static/media/Scissors1.svg": "/portfolio/static/media/Scissors1.8d687d6938f170211ea350500d407c4f.svg",
     "static/media/Paper1.svg": "/portfolio/static/media/Paper1.0fd099f868e816397d09b8a4c53e15b6.svg",
@@ -29,12 +28,12 @@
     "static/media/slick.ttf": "/portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/portfolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/portfolio/index.html",
-    "main.8217f472.css.map": "/portfolio/static/css/main.8217f472.css.map",
-    "main.b9b7acfb.js.map": "/portfolio/static/js/main.b9b7acfb.js.map",
+    "main.db604b75.css.map": "/portfolio/static/css/main.db604b75.css.map",
+    "main.acf69efb.js.map": "/portfolio/static/js/main.acf69efb.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8217f472.css",
-    "static/js/main.b9b7acfb.js"
+    "static/css/main.db604b75.css",
+    "static/js/main.acf69efb.js"
   ]
 }
