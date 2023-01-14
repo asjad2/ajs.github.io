@@ -20,8 +20,7 @@ function Login(props) {
       User: "",
       Password: "",
     });
-    console.log(res.data);
-    if ((res.data = 200)) {
+    if ((res.status = 200)) {
       setIsAuthentic(!props.auth);
      
     } else {

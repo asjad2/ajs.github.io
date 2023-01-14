@@ -32,7 +32,7 @@ function Navbar(props) {
             src={profile}
             alt="soon"
           />
-          <span className="ml-3 font-Poppins ">{`<Asjad Iftikhar/>`}</span>
+          <span className="ml-3 font-Poppins ">{`<Asjad Iftikahr/>`}</span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           <Link
@@ -63,7 +63,7 @@ function Navbar(props) {
             Contact US
           </HashLink>
           <Link
-            to="/blog"
+            to="/portfolio/blog"
             className="mr-5 hover:text-[#33BD94] hover:border-b-2 border-white  "
           >
             Blogs

@@ -12,7 +12,7 @@ function Footer() {
           className="flex title-font font-medium items-center md:justify-start justify-center "
         >
           <img className=" w-14 " src={profile} alt="" />
-          <span className="ml-3 text-xl cursor-pointer">{`<Asjad Iftikhar/>`}</span> 
+          <span className="ml-3 text-xl cursor-pointer">{`<Asjad Iftikahr/>`}</span> 
         </a>
          
         <p className="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 cursor-tex">

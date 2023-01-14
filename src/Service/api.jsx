@@ -20,3 +20,6 @@ export const getMembers = async () => {
   return await api.get(`${url}/portfolio/getMembers`)
 };
 
+export const Logout=async (req,res)=>{
+  return await api.get(`${url}/portfolio/logout`)
+}

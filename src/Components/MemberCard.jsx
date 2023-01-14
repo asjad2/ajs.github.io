@@ -1,5 +1,7 @@
 import { getMembers } from "../Service/api";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Logout } from "../Service/api";
 
 const MemberCard = (props) => {
   const [members, SetMembers] = useState([]);
@@ -8,9 +10,19 @@ const MemberCard = (props) => {
     const result = await getMembers();
     SetMembers(result.data);
   };
+  const navigate = useNavigate();
+  const Loggout=async()=>{
+  const logout=  await Logout()
+  console.log(logout.status)
+  if(logout.status===200){
+    navigate("/portfolio/login");}
+  }
   useEffect(() => {
     showMessages();
   }, []);
+
+  
+  
   return (
     <div className={`w-full bg-${props.bgcolor} f text-black p-8`}>
       <h1 className={`text-center font-bold text-2xl text-${props.txtcolor}`}>
@@ -37,9 +49,11 @@ const MemberCard = (props) => {
           <h3>{`${members.PhoneNumber}`} </h3>
         </div>
         <div className="flex flex-row gap-4">
-          <h2 className="rounded-3xl text-white w-fit h-fit p-2 bg-gradient-to-l from-[#000000] to-[#33BD94] active:from-[#063527]">
-            Forgotten Password
+         
+          <h2 className="rounded-3xl text-white w-fit h-fit p-2 bg-gradient-to-l from-[#000000] to-[#33BD94] active:from-[#063527]" onClick={Loggout}>
+            Logout
           </h2>
+         
           <h2 className="rounded-3xl text-white w-fit h-fit p-2 bg-gradient-to-l from-[#000000] to-[#33BD94] active:from-[#063527]">
             Delete my account
           </h2>

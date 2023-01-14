@@ -1,6 +1,33 @@
 import React, { useState } from "react";
 import signupsvg from "./../Images/signup.svg";
 import { addMembers } from "../Service/api";
+import { Formik, Form, Field } from "formik";
+import * as yup from "yup";
+
+const validationSchema = yup.object({
+  FullName: yup.string().required("Name is Required!"),
+
+  UserName: yup.number().required("UserName is Required!"),
+
+  Password: yup
+    .string()
+    .matches(
+      /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/,
+      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+    )
+    .required("Password is Required!"),
+    confirmPassword: yup
+    .string()
+    .matches(
+      /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/,
+      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+    )
+    .required("Password is Required!"),
+
+  PhoneNumber: yup.number().required("Phone is Required!"),
+
+  Email: yup.string().required("Email is Required!"),
+});
 
 function Signup(props) {
   let [member, setMember] = useState({
@@ -9,7 +36,7 @@ function Signup(props) {
     Email: "",
     PhoneNumber: "",
     Password: "",
-    confirmPassword:""
+    confirmPassword: "",
   });
 
   const handleMembers = (e) => {
@@ -24,7 +51,7 @@ function Signup(props) {
       Email: "",
       PhoneNumber: "",
       Password: "",
-      confirmPassword:""
+      confirmPassword: "",
     });
   };
   return (

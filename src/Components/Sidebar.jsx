@@ -7,9 +7,9 @@ import fightgame from "./../Images/Sidebar/fightgame.svg";
 const Sidebar = ({open,setOpen}) => {
   
   const Menus = [
-    { path: "projects/rps", title: "RPS", img: rps, gap: true },
-    { path: "projects/weather", title: "Weather", img: superhero, gap: true },
-    { path: "projects/superhero", title: "Super Heroes", img: fightgame, gap: true },
+    { path: "portfolio/projects/rps", title: "RPS", img: rps, gap: true },
+    { path: "portfolio/projects/weather", title: "Weather", img: superhero, gap: true },
+    { path: "portfolio/projects/superhero", title: "Super Heroes", img: fightgame, gap: true },
   ];
 
   return (

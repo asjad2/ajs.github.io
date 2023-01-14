@@ -65,10 +65,10 @@ function App() {
         ></Route>
         <Route
           exact
-          path="blog"
+          path="portfolio/profile"
           element={
             auth ? (
-              <Blogs
+              <MemberCard
                 bgcolor={bgcolor}
                 txtcolor={txtcolor}
                 headtxtcolor={headtxtcolor}
@@ -81,6 +81,17 @@ function App() {
                 authentication={authentication}
               />
             )
+          }
+        ></Route>
+        <Route
+          exact
+          path="/portfolio/blog"
+          element={
+            <Blogs
+              bgcolor={bgcolor}
+              txtcolor={txtcolor}
+              headtxtcolor={headtxtcolor}
+            />
           }
         ></Route>
         <Route
@@ -121,24 +132,11 @@ function App() {
           <Route exact path="rps" element={<RPS />}></Route>
           <Route exact path="superhero" element={<Superhero />}></Route>
         </Route>
-     
-
         <Route
           exact
           path="*"
           element={
             <Page404
-              bgcolor={bgcolor}
-              txtcolor={txtcolor}
-              headtxtcolor={headtxtcolor}
-            />
-          }
-        ></Route>
-        <Route
-          exact
-          path="/portfolio/profile"
-          element={
-            <MemberCard
               bgcolor={bgcolor}
               txtcolor={txtcolor}
               headtxtcolor={headtxtcolor}
