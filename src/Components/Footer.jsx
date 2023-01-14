@@ -5,7 +5,7 @@ import { BsFacebook,BsTwitter,BsInstagram,BsGithub,BsGlobe } from 'react-icons/b
 
 function Footer() {
   return (
-    <footer className="container mt-12 font-Roboto text-black hover:text-white text-xl bg-gradient-to-l from-[#dcfff4] to-[#33BD94]  hover:to-[#000000] ">
+    <footer className="container font-Roboto text-black hover:text-white text-xl bg-gradient-to-l from-[#dcfff4] to-[#33BD94]  hover:to-[#000000] ">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col mt-auto">
         <a
           href
